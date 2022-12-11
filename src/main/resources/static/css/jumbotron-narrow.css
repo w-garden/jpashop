@@ -45,6 +45,9 @@ body {
 .jumbotron {
     text-align: center;
     border-bottom: 1px solid #e5e5e5;
+    background: #d1d2d4;
+    padding: 20px 0px;
+
 }
 
 .jumbotron .btn {
@@ -80,4 +83,16 @@ body {
     .jumbotron {
         border-bottom: 0;
     }
+}
+
+
+
+.form-group{
+    padding: 15px 0px;
+}
+
+form.form-inline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
