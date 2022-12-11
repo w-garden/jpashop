@@ -8,14 +8,12 @@
         <div>
             <form th:object="${orderSearch}" class="form-inline">
                 <div class="form-group mb-2">
-                    <input type="text" th:field="*{memberName}" class="form-
-control" placeholder="회원명"/>
+                    <input type="text" th:field="*{memberName}" class="form-control" placeholder="회원명"/>
                 </div>
                 <div class="form-group mx-sm-1 mb-2">
-                    <select th:field="*{orderStatus}" class="form-control">
+                    <select th:field="*{orderState}" class="form-control">
                         <option value="">주문상태</option>
-                        <option th:each=
-                                        "status : ${T(jpabook.jpashop.domain.OrderStatus).values()}"
+                        <option th:each="status : ${T(jpabook.jpashop.domain.OrderState).values()}"
                                 th:value="${status}"
                                 th:text="${status}">option
                         </option>
@@ -46,10 +44,7 @@ control" placeholder="회원명"/>
                 <td th:text="${item.orderItems[0].count}"></td>
                 <td th:text="${item.status}"></td>
                 <td th:text="${item.orderDate}"></td>
-                <td>
-                    <a th:if="${item.status.name() == 'ORDER'}" href="#"
-                       th:href="'javascript:cancel('+${item.id}+')'"
-                       class="btn btn-danger">CANCEL</a></td>
+                <td> <a th:if="${item.status.name() == 'ORDER'}" href="#" th:href="'javascript:cancel('+${item.id}+')'" class="btn btn-danger">CANCEL</a></td>
             </tr>
             </tbody>
         </table>
